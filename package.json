@@ -14,16 +14,22 @@
       "url": "https://github.com/xidedix"
     }
   ],
-  "homepage": "https://coreui.io/angular",
+  "main": "electron/electron-starter.js",
+  "homepage": "./",
   "copyright": "Copyright 2018 creativeLabs Łukasz Holeczek",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build --prod",
+    "ng-start": "ng serve",
+    "ng-build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "start": "nf start -p 4200",
+    "electron": "electron .",
+    "electron-start": "node electron/electron-wait-angular",
+    "electron-build": "electron-packager ./ AngularElectron --platform=win32 --arch=x64 --overwrite",
+    "build": "yarn ng-build && yarn electron-build"
   },
   "private": true,
   "dependencies": {
@@ -65,6 +71,9 @@
     "@types/jasminewd2": "^2.0.3",
     "@types/node": "^10.3.4",
     "codelyzer": "^4.4.2",
+    "electron": "^2.0.5",
+    "electron-packager": "^12.1.0",
+    "foreman": "^3.0.1",
     "jasmine-core": "^3.1.0",
     "jasmine-spec-reporter": "^4.2.1",
     "karma": "^2.0.3",

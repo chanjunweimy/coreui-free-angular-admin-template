@@ -5,6 +5,7 @@
 /dist-server
 /tmp
 /out-tsc
+/AngularElectron-win32-x64
 
 # dependencies
 /node_modules
